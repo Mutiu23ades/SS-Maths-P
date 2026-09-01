@@ -1,1 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSS Mathematics App P</title>
 
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f2f7ff;
+  color:#172033;
+  line-height:1.65;
+}
+
+header{
+  background:#0756a8;
+  color:white;
+  text-align:center;
+  padding:22px 15px;
+}
+
+header h1{margin:0;font-size:25px}
+header p{margin:7px 0 0}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:15px;
+}
+
+.card{
+  background:white;
+  padding:18px;
+  margin:15px 0;
+  border-radius:12px;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+h2{color:#0756a8}
+h3{color:#06457f}
+
+select,input,button{
+  width:100%;
+  padding:13px;
+  font-size:16px;
+  border-radius:8px;
+}
+
+select,input{
+  border:1px solid #bbb;
+}
+
+button{
+  border:none;
+  background:#0756a8;
+  color:white;
+  margin-top:12px;
+  cursor:pointer;
+}
+
+button:hover{background:#043d79}
+
+.formula{
+  background:#eaf4ff;
+  border-left:5px solid #0756a8;
+  padding:12px;
+  margin:12px 0;
+  font-weight:bold;
+}
+
+.example{
+  background:#f8fbff;
+  border:1px solid #c9dff7;
+  padding:14px;
+  margin:14px 0;
+  border-radius:8px;
+}
+
+.answer{
+  background:#edf9ef;
+  border-left:5px solid #299447;
+  padding:10px;
+  margin-top:8px;
+}
+
+.score{
+  margin-top:15px;
+  padding:12px;
+  background:#eaf4ff;
+  font-size:18px;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>SSS MATHEMATICS – APP P</h1>
+<p>Topics 76–80 | Circle Geometry and Mensuration</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Select a Topic</h2>
+
+<select id="topicSelect" onchange="showTopic()">
+<option value="">-- Select Topic --</option>
+<option value="76">76. Cyclic Quadrilaterals</option>
+<option value="77">77. Tangents to Circles</option>
+<option value="78">78. Perimeter and Area of Plane Shapes</option>
+<option value="79">79. Length of Arcs</option>
+<option value="80">80. Area of Sectors</option>
+</select>
+</div>
+
+<div id="content"></div>
+
+</div>
+
+<footer>
+SSS Mathematics App P • Topics 76–80
+</footer>
+
+<script>
+
+const topics = {
+
+76: `
+<div class="card">
+<h2>Topic 76: Cyclic Quadrilaterals</h2>
+
+<h3>Learning Objectives</h3>
+<ul>
+<li>Understand the meaning of a cyclic quadrilateral.</li>
+<li>Use the properties of opposite angles.</li>
+<li>Use exterior angles of cyclic quadrilaterals.</li>
+<li>Solve problems involving angles in circles.</li>
+</ul>
+
+<h3>1. Meaning of a Cyclic Quadrilateral</h3>
+
+<p>
+A cyclic quadrilateral is a quadrilateral whose four vertices lie on the
+circumference of the same circle.
+</p>
+
+<h3>2. Main Property</h3>
+
+<div class="formula">
+Opposite angles of a cyclic quadrilateral add up to 180°.
+</div>
+
+<p>If ABCD is cyclic:</p>
+
+<div class="formula">
+∠A + ∠C = 180°
+<br>
+∠B + ∠D = 180°
+</div>
+
+<div class="example">
+<b>Example 1:</b> One angle of a cyclic quadrilateral is 115°.
+Find the opposite angle.
+<br><br>
+Opposite angles = 180°
+<br>
+Required angle = 180° − 115°
+<br>
+= 65°
+<div class="answer"><b>Answer: 65°</b></div>
+</div>
+
+<h3>3. Exterior Angle Property</h3>
+
+<div class="formula">
+The exterior angle of a cyclic quadrilateral is equal to the interior
+opposite angle.
+</div>
+
+<div class="example">
+<b>Example 2:</b> The exterior angle at one vertex of a cyclic quadrilateral
+is 72°. Find the interior opposite angle.
+<br><br>
+Exterior angle = interior opposite angle.
+<br>
+Therefore the angle = 72°.
+<div class="answer"><b>Answer: 72°</b></div>
+</div>
+
+<div class="example">
+<b>Example 3:</b> Opposite angles are (3x + 20)° and (5x − 40)°.
+Find x.
+<br><br>
+Opposite angles add up to 180°.
+<br>
+(3x + 20) + (5x − 40) = 180
+<br>
+8x − 20 = 180
+<br>
+8x = 200
+<br>
+x = 25
+<div class="answer"><b>Answer: x = 25</b></div>
+</div>
+
+<h3>Practice Questions</h3>
+<ol>
+<li>Define a cyclic quadrilateral.</li>
+<li>One angle is 130°. Find its opposite angle.</li>
+<li>An exterior angle is 85°. Find the interior opposite angle.</li>
+<li>Opposite angles are (2x + 30)° and (4x + 10)°. Find x.</li>
+<li>State two important properties of cyclic quadrilaterals.</li>
+</ol>
+</div>
+`,
+
+77: `
+<div class="card">
+<h2>Topic 77: Tangents to Circles</h2>
+
+<h3>Learning Objectives</h3>
+<ul>
+<li>Define a tangent.</li>
+<li>Understand the relationship between a tangent and radius.</li>
+<li>Use properties of tangents from an external point.</li>
+<li>Solve angle problems involving tangents.</li>
+</ul>
+
+<h3>1. Meaning of a Tangent</h3>
+
+<p>
+A tangent is a straight line that touches a circle at exactly one point.
+The point where it touches the circle is called the point of contact.
+</p>
+
+<h3>2. Radius and Tangent</h3>
+
+<div class="formula">
+The tangent to a circle is perpendicular to the radius at the point of contact.
+</div>
+
+<div class="example">
+<b>Example 1:</b> Find the angle between a radius and a tangent at the
+point of contact.
+<br><br>
+A tangent is perpendicular to the radius.
+<br>
+Therefore:
+<br>
+Angle = 90°
+<div class="answer"><b>Answer: 90°</b></div>
+</div>
+
+<h3>3. Tangents from an External Point</h3>
+
+<div class="formula">
+Tangents drawn from the same external point to a circle are equal in length.
+</div>
+
+<div class="example">
+<b>Example 2:</b> From point P outside a circle, two tangents PA and PB
+are drawn. If PA = 12 cm, find PB.
+<br><br>
+Tangents from the same external point are equal.
+<br>
+PB = 12 cm
+<div class="answer"><b>Answer: 12 cm</b></div>
+</div>
+
+<h3>4. Angle Between Tangent and Chord</h3>
+
+<p>
+The angle between a tangent and a chord is equal to the angle in the
+alternate segment.
+</p>
+
+<div class="example">
+<b>Example 3:</b> The angle between a tangent and a chord is 48°.
+Find the angle in the alternate segment.
+<br><br>
+They are equal.
+<br>
+Therefore the angle = 48°.
+<div class="answer"><b>Answer: 48°</b></div>
+</div>
+
+<h3>Practice Questions</h3>
+<ol>
+<li>Define a tangent.</li>
+<li>What angle does a tangent make with a radius at the point of contact?</li>
+<li>Two tangents from an external point are PA and PB. If PA = 15 cm, find PB.</li>
+<li>State the tangent-chord theorem.</li>
+<li>An angle between a tangent and chord is 62°. Find the angle in the alternate segment.</li>
+</ol>
+</div>
+`,
+
+78: `
+<div class="card">
+<h2>Topic 78: Perimeter and Area of Plane Shapes</h2>
+
+<h3>Learning Objectives</h3>
+<ul>
+<li>Calculate the perimeter of common plane shapes.</li>
+<li>Calculate areas of rectangles, triangles and parallelograms.</li>
+<li>Calculate the area of trapeziums and circles.</li>
+<li>Solve practical mensuration problems.</li>
+</ul>
+
+<h3>1. Perimeter</h3>
+
+<p>
+The perimeter of a shape is the total distance around its boundary.
+</p>
+
+<div class="formula">
+Perimeter of Rectangle = 2(l + w)
+</div>
+
+<div class="formula">
+Circumference of Circle = 2πr
+</div>
+
+<div class="example">
+<b>Example 1:</b> Find the perimeter of a rectangle of length 12 cm and
+width 7 cm.
+<br><br>
+P = 2(12 + 7)
+<br>
+= 2 × 19
+<br>
+= 38 cm
+<div class="answer"><b>Answer: 38 cm</b></div>
+</div>
+
+<h3>2. Area of Rectangle</h3>
+
+<div class="formula">
+Area = Length × Width
+</div>
+
+<h3>3. Area of Triangle</h3>
+
+<div class="formula">
+Area = ½ × Base × Height
+</div>
+
+<div class="example">
+<b>Example 2:</b> Find the area of a triangle with base 14 cm and
+height 8 cm.
+<br><br>
+Area = ½ × 14 × 8
+<br>
+= 56 cm²
+<div class="answer"><b>Answer: 56 cm²</b></div>
+</div>
+
+<h3>4. Area of a Parallelogram</h3>
+
+<div class="formula">
+Area = Base × Perpendicular Height
+</div>
+
+<h3>5. Area of a Trapezium</h3>
+
+<div class="formula">
+Area = ½(a + b)h
+</div>
+
+<h3>6. Area of a Circle</h3>
+
+<div class="formula">
+Area = πr²
+</div>
+
+<div class="example">
+<b>Example 3:</b> Find the area of a circle of radius 7 cm.
+Use π = 22/7.
+<br><br>
+Area = 22/7 × 7²
+<br>
+= 22 × 7
+<br>
+= 154 cm²
+<div class="answer"><b>Answer: 154 cm²</b></div>
+</div>
+
+<h3>Practice Questions</h3>
+<ol>
+<li>Find the perimeter of a rectangle 15 cm by 9 cm.</li>
+<li>Find the area of a rectangle 18 cm by 6 cm.</li>
+<li>Find the area of a triangle with base 20 cm and height 9 cm.</li>
+<li>Find the area of a parallelogram with base 12 cm and height 8 cm.</li>
+<li>Find the area of a circle with radius 14 cm. Use π = 22/7.</li>
+</ol>
+</div>
+`,
+
+79: `
+<div class="card">
+<h2>Topic 79: Length of Arcs</h2>
+
+<h3>Learning Objectives</h3>
+<ul>
+<li>Understand the meaning of an arc.</li>
+<li>Calculate the circumference of a circle.</li>
+<li>Calculate the length of a minor or major arc.</li>
+<li>Solve practical problems involving arcs.</li>
+</ul>
+
+<h3>1. Meaning of an Arc</h3>
+
+<p>
+An arc is a part of the circumference of a circle.
+The length of an arc depends on the angle subtended at the centre.
+</p>
+
+<h3>2. Arc Length Formula</h3>
+
+<div class="formula">
+Arc Length = θ/360 × 2πr
+</div>
+
+<p>Where:</p>
+<ul>
+<li>θ = angle at the centre</li>
+<li>r = radius of the circle</li>
+</ul>
+
+<div class="example">
+<b>Example 1:</b> Find the length of an arc subtending 90° at the centre
+of a circle of radius 14 cm. Use π = 22/7.
+<br><br>
+Arc length = 90/360 × 2 × 22/7 × 14
+<br>
+= ¼ × 88
+<br>
+= 22 cm
+<div class="answer"><b>Answer: 22 cm</b></div>
+</div>
+
+<div class="example">
+<b>Example 2:</b> Find the length of an arc subtending 120° in a circle
+of radius 21 cm. Use π = 22/7.
+<br><br>
+Circumference = 2 × 22/7 × 21
+<br>
+= 132 cm
+<br>
+Arc length = 120/360 × 132
+<br>
+= 44 cm
+<div class="answer"><b>Answer: 44 cm</b></div>
+</div>
+
+<h3>3. Major Arc</h3>
+
+<p>
+If the minor arc has angle θ°, the corresponding major arc has angle:
+</p>
+
+<div class="formula">
+360° − θ°
+</div>
+
+<h3>Practice Questions</h3>
+<ol>
+<li>Find the circumference of a circle of radius 7 cm.</li>
+<li>Find the arc length for θ = 180° and r = 14 cm.</li>
+<li>Find the arc length for θ = 60° and r = 21 cm.</li>
+<li>A circle has radius 10 cm. Find the length of an arc of 90°. Leave your answer in terms of π.</li>
+<li>If a minor arc subtends 140°, find the angle subtended by the major arc.</li>
+</ol>
+</div>
+`,
+
+80: `
+<div class="card">
+<h2>Topic 80: Area of Sectors</h2>
+
+<h3>Learning Objectives</h3>
+<ul>
+<li>Define a sector of a circle.</li>
+<li>Calculate the area of a sector.</li>
+<li>Calculate areas of major and minor sectors.</li>
+<li>Solve practical problems involving sectors.</li>
+</ul>
+
+<h3>1. Meaning of a Sector</h3>
+
+<p>
+A sector is a region enclosed by two radii and an arc of a circle.
+</p>
+
+<h3>2. Area of a Sector</h3>
+
+<div class="formula">
+Area of Sector = θ/360 × πr²
+</div>
+
+<p>Where θ is the angle at the centre and r is the radius.</p>
+
+<div class="example">
+<b>Example 1:</b> Find the area of a sector of angle 90° in a circle of
+radius 14 cm. Use π = 22/7.
+<br><br>
+Area = 90/360 × 22/7 × 14²
+<br>
+= ¼ × 616
+<br>
+= 154 cm²
+<div class="answer"><b>Answer: 154 cm²</b></div>
+</div>
+
+<div class="example">
+<b>Example 2:</b> Find the area of a sector of angle 120° and radius 21 cm.
+Use π = 22/7.
+<br><br>
+Area of circle = 22/7 × 21²
+<br>
+= 1386 cm²
+<br>
+Sector area = 120/360 × 1386
+<br>
+= 462 cm²
+<div class="answer"><b>Answer: 462 cm²</b></div>
+</div>
+
+<h3>3. Major Sector</h3>
+
+<p>
+The area of a major sector can be found by subtracting the area of the
+minor sector from the area of the complete circle.
+</p>
+
+<div class="formula">
+Major Sector = Area of Circle − Minor Sector
+</div>
+
+<div class="example">
+<b>Example 3:</b> A circle has radius 7 cm. A minor sector has an angle
+of 90°. Find the area of the major sector. Use π = 22/7.
+<br><br>
+Area of circle = 154 cm²
+<br>
+Minor sector = 90/360 × 154 = 38.5 cm²
+<br>
+Major sector = 154 − 38.5
+<br>
+= 115.5 cm²
+<div class="answer"><b>Answer: 115.5 cm²</b></div>
+</div>
+
+<h3>Practice Questions</h3>
+<ol>
+<li>Define a sector.</li>
+<li>Find the area of a 180° sector of radius 14 cm.</li>
+<li>Find the area of a 60° sector of radius 21 cm.</li>
+<li>A sector has angle 90° and radius 10 cm. Express its area in terms of π.</li>
+<li>Find the area of the major sector when the minor sector angle is 120° in a circle of radius 14 cm.</li>
+</ol>
+</div>
+`
+};
+
+function showTopic(){
+  const value=document.getElementById("topicSelect").value;
+  const content=document.getElementById("content");
+
+  if(value && topics[value]){
+    content.innerHTML=topics[value]+createTest(value);
+    window.scrollTo({
+      top:content.offsetTop-10,
+      behavior:"smooth"
+    });
+  }else{
+    content.innerHTML="";
+  }
+}
+
+function createTest(topic){
+
+const tests={
+
+76:[
+["Opposite angles of a cyclic quadrilateral add up to?","180"],
+["If one opposite angle is 110°, the other is?","70"],
+["A cyclic quadrilateral has how many vertices on a circle?","4"]
+],
+
+77:[
+["The angle between a tangent and radius is?","90"],
+["Tangents from the same external point are?","equal"],
+["If one tangent is 15 cm, the other is?","15"]
+],
+
+78:[
+["Area of a triangle is half × base ×?","height"],
+["Area of a rectangle is length ×?","width"],
+["Find the area of a square of side 5 cm.","25"]
+],
+
+79:[
+["A full circle contains how many degrees?","360"],
+["An arc of 180° is what fraction of the circumference?","1/2"],
+["Find the angle of a semicircular arc.","180"]
+],
+
+80:[
+["Area of a sector is θ/360 ×?","πr²"],
+["A semicircle is what fraction of a full circle?","1/2"],
+["Find the sector angle for a quarter of a circle.","90"]
+]
+
+};
+
+let html=`
+<div class="card">
+<h2>Topic Test</h2>
+<p>Answer the questions below.</p>
+`;
+
+tests[topic].forEach((q,i)=>{
+html+=`
+<div class="example">
+<b>${i+1}. ${q[0]}</b>
+<input id="answer${topic}_${i}" placeholder="Type your answer">
+</div>
+`;
+});
+
+html+=`
+<button onclick="markTest(${topic})">Submit Test</button>
+<div id="result${topic}" class="score"></div>
+</div>`;
+
+return html;
+}
+
+function clean(text){
+return text.toLowerCase()
+.replace(/\s+/g," ")
+.replace(/°/g,"")
+.trim();
+}
+
+function markTest(topic){
+
+const answers={
+
+76:["180","70","4"],
+77:["90","equal","15"],
+78:["height","width","25"],
+79:["360","1/2","180"],
+80:["πr²","1/2","90"]
+
+};
+
+let score=0;
+
+answers[topic].forEach((answer,i)=>{
+const input=document.getElementById(`answer${topic}_${i}`);
+
+if(clean(input.value)===clean(answer)){
+score++;
+}
+});
+
+document.getElementById(`result${topic}`).innerHTML=
+`Your Score: ${score} / ${answers[topic].length}<br><br>`+
+(score===answers[topic].length
+? "Excellent! You have mastered this topic."
+: "Good attempt. Review the lesson and try again.");
+}
+
+</script>
+
+</body>
+</html>
